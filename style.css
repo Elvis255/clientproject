@@ -1,1 +1,28 @@
+html {
+    height:800px;
+    background: linear-gradient(to bottom, #cc66ff 0%, #66ffcc 100%);
+}
+
+h1 {
  
+  font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  text-align: center ;
+}
+
+button{
+
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+

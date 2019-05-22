@@ -2,23 +2,65 @@
 <html>
     <head>
         <title>What's On Your Playlist!?</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
         <script src="script.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
     </head>
     <body>
 <h1>
     What's on Your Playlist!?
 </h1>
- <div>
-    <h2 class="first"> Where would you be listening to music?</h2>
-       <input type="radio" name="question1"> <label>Alone at home</label><br>
-       <input type="radio" name="question1"> <label>At a party/social event</label><br>
-       <input type="radio" name="question1"> <label>At work/school</label><br>
-       <input type="radio" name="question1"> <label>In transit (bus, train, car, walking)</label>
-    <h2 class="first">What aspect of a song usually draws you in? lyrics, vocals, beat, harmonies</h2>
-        <input type= "radio" name="question2" placeholder="Korea, Colombia, Spain">
-    <h2 class="first">How would you describe your style? bohemian, classic and clean, spunky, something entirely of my own</h2>
-        <input type="radio" name="question3" placeholder="Mine is beyond the scale">
+
+<div>
+    <h2>1. Where would you be listening to music?</h2>
+        <input type="radio" name="question1" value="3"> <label>Alone at home</label><br> 
+        <input type="radio" name="question1" value="2"> <label>At a party/social event</label><br> 
+        <input type="radio" name="question1" value="1"> <label>At work/school</label><br> 
+        <input type="radio" name="question1" value="4"> <label>In transit (train, car, walking, etc.)</label> 
+    <p id="where" class="question"></p>
+    <h2>2. What aspect of a song usually draws you in?</h2>
+        <input type="radio" name="question2" value="3"> <label>lyrics</label><br>
+        <input type="radio" name="question2" value="1"> <label>vocals</label><br>
+        <input type="radio" name="question2" value="2"> <label>beat</label><br> 
+        <input type="radio" name="question2" value="4"> <label>harmonies</label><br>
+    <p id="aspect" class="question"></p>
+    <h2>3. How would you describe your style?</h2>
+        <input type="radio" name="question3" value="3"> <label>edgy</label><br> 
+        <input type="radio" name="question3" value="1"> <label>classic and clean</label><br> 
+        <input type="radio" name="question3" value="2"> <label>spunky</label><br> 
+        <input type="radio" name="question3" value="4"> <label>something entirely of my own</label> 
+    <p id="style" class="question"></p>
+    <h2>4. What's your preferred drink?</h2>
+        <input type="radio" name="question4" value="4"> <label>coffee</label><br>
+        <input type="radio" name="question4" value="1"> <label>water</label><br> 
+        <input type="radio" name="question4" value="2"> <label>juice</label><br>
+        <input type="radio" name="question4" value="3"> <label>tea</label>
+    <p id="drink" class="question"></p>
+    <h2>5. Why do you listen to music?</h2>
+        <input type="radio" name="question5" value="3"> <label>for the story</label><br>
+        <input type="radio" name="question5" value="2"> <label>to have fun</label><br> 
+        <input type="radio" name="question5" value="1"> <label>to relax</label><br> 
+        <input type="radio" name="question5" value="4"> <label>I just like it</label><br> 
+    <p id="why" class="question"></p>
+    <h2>6. What is your favorite season?</h2>
+        <input type="radio" name="question6" value="3"> <label>Winter</label><br>
+        <input type="radio" name="question6" value="4"> <label>Spring</label><br> 
+        <input type="radio" name="question6" value="2"> <label>Summer</label><br> 
+        <input type="radio" name="question6" value="1"> <label>Fall</label><br> 
+    <p id="season" class="question"></p>
   </div>
+  <div class="result">
+    <button>Click here to find out what's on your playlist!</button>
+  </div>
+  <div class="container">
+            <div class="row gallery justify-content-center">
+                <h3 class="text-center">  Your results will display here.</h3>
+            </div>
+        </div>
+        
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="js/script.js" async defer> </script>
 </html>

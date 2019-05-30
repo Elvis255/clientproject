@@ -1,51 +1,47 @@
 /* global $ */
 var playlist;
-var imgSrc;
-var totalScore;
 var youtubeLink;
+var totalScore;
 $(".question").hide();
+
 function displayResult(){
-    if(totalScore >= 15){
-        return $(".result").html("");
+    if(totalScore >= 6){
+        return $(".result").html("<h2>Your playlist is " + playlist + "!</h2>");
     }else{
-        return $(".result").html("");
+        return $(".result").html("<h2>Uh oh. You didn't answer every question. Go back and try again.</h2>");
     }
 }
+
 function placement(){
-    if (totalScore >= 6 && totalScore <= 10) {
+    if (totalScore > 6 && totalScore <= 10) {
         playlist = "Chill";
-        imgSrc="";
         //youtubeLink= str.link("https://www.youtube.com/playlist?list=PL3tcXMQSY-kpOI48iTBIBtmcK3vPwDP4c")
     }else if(totalScore > 10 && totalScore <= 15){
         playlist = "Upbeat";
-        imgSrc="";
         //youtubeLink= str.link("https://www.youtube.com/playlist?list=PL3tcXMQSY-koiPlf5Us_mbtM_nP5nmw-O")
     }else if(totalScore > 15 && totalScore <= 20){
         playlist = "Moody";
-        imgSrc="";
        //youtubeLink= str.link("https://www.youtube.com/playlist?list=PL3tcXMQSY-krzvf24poGX8ecl1YxAoSQe")
     }else if(totalScore > 20 && totalScore <= 24){
         playlist = "Favorites";
-        imgSrc="";
         //youtubeLink= str.link("https://www.youtube.com/playlist?list=PL3tcXMQSY-krzBjeRzisnmFAv6zb_8U0b")
+    }
 }
 
 function description(){
     if(playlist === "Chill"){
-        return $(".result").append("<h4>You're Kanan! You never lose your cool, even in tough situations. You're very supportive and put your friends' needs above your own.</4>");
+        return $(".result").append("<h4>Your playlist is Chill! Perfect for when you want to relax!</h4>");
     }else if(playlist === "Upbeat"){
-        return $(".result").append("<h4>You're Dia! You're very refined, polite, and a bit of a perfectionist.</h4>");
+        return $(".result").append("<h4>Your playlist is Upbeat! Someone's happy today!</h4>");
     }else if(playlist === "Moody"){
-        return $(".result").append("<h4>You're Hanamaru! You're hardworking, an avid reader, and a bit out of the know when it comes to technology.</h4>");
+        return $(".result").append("<h4>Your playlist is Moody. I guess you're in your bag today.</h4>");
     }else if(playlist === "Favorites"){
-        return $(".result").append("<h4>You're Mari! You're very cheerful and you love making jokes!</h4>");
+        return $(".result").append("<h4>Your playlist is Curators' Favorites! Time to discover some new music.</h4>");
     }
 }
 
-
 $("button").click(function() {
-        memberPlacement = "TBD";
-        imgSrc = "https://media.giphy.com/media/22zgHX8aop488/giphy.gif";
+        playlist = "TBD";
         var q1Result = Number($("input[name='question1']:checked").val());
         $("#where").text(q1Result);
         var q2Result = Number($("input[name='question2']:checked").val());
@@ -62,9 +58,9 @@ $("button").click(function() {
         placement();
         displayResult();
         description();
+});
 
 $("#search-button").click(function(){
-    
     var search = "https://api.giphy.com/v1/gifs/search?q=" + $("input").val() + "&rating=pg&api_key=RBkP7oANf3SFnCb2sGL5c7Sq3j4NBFFr";
   $.ajax({
       url: search,
@@ -73,8 +69,6 @@ $("#search-button").click(function(){
                 var value = Math.floor(response.data.length * Math.random());
            $('.gallery').append("<img src='" + response.data[value].images.original.url + "'/>");
         console.log(value);
-          
-      }
-  });
-
+      },
+      });
 });

@@ -1,5 +1,5 @@
 html {
-    height:800px;
+    height:1000px;
     background: linear-gradient(to bottom, #cc66ff 0%, #66ffcc 100%);
 }
 
@@ -24,5 +24,16 @@ button{
   cursor: pointer;
 }
 
+.header{
+    display: flex;
+    justify-content: space-between;
+    color: #0f65ef;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.logo {
+    width: 25px;
+}
 
 
